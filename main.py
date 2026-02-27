@@ -25,7 +25,13 @@ SPOTIFY_SCOPES = "user-read-currently-playing user-read-playback-state"
 
 COOKIE_SECURE = os.getenv("COOKIE_SECURE", "true").lower() in ("1","true","yes","on")
 
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+from passlib.context import CryptContext
+
+pwd_context = CryptContext(
+    schemes=["pbkdf2_sha256"],
+    deprecated="auto",
+    pbkdf2_sha256__rounds=210000
+)
 
 app = FastAPI(title="LovePing Server")
 templates = Jinja2Templates(directory=os.path.join(os.path.dirname(__file__), "app", "templates"))
