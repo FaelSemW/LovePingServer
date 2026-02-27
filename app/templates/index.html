@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="grid md:grid-cols-2 gap-8 items-center">
+  <div class="card">
+    <h1 class="text-3xl font-semibold leading-tight">
+      LovePing — Login + Spotify no site<br>
+      e o app só entra com usuário/senha.
+    </h1>
+    <p class="mt-4 text-zinc-300">
+      Você autoriza o Spotify <b>uma vez só</b> aqui no site.
+      Depois, o app usa seu login e já fica tudo linkado.
+    </p>
+    <div class="mt-6 flex gap-3">
+      <a class="btn" href="/register">Criar conta</a>
+      <a class="btn-ghost" href="/login">Entrar</a>
+    </div>
+  </div>
+  <div class="card card-glow">
+    <div class="text-sm text-zinc-400">Fluxo</div>
+    <ol class="mt-4 space-y-3 text-zinc-200">
+      <li class="flex gap-3"><span class="step">1</span><span>Cria conta no site</span></li>
+      <li class="flex gap-3"><span class="step">2</span><span>Conecta Spotify no dashboard</span></li>
+      <li class="flex gap-3"><span class="step">3</span><span>Loga no app e pronto</span></li>
+    </ol>
+  </div>
+</section>
+{% endblock %}

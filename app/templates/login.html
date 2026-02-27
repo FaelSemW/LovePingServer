@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="max-w-lg mx-auto card">
+  <h2 class="text-2xl font-semibold">Entrar</h2>
+  <p class="text-zinc-400 mt-1">Use essas credenciais no app também.</p>
+  {% if error %}<div class="mt-4 alert">{{ error }}</div>{% endif %}
+  <form class="mt-6 space-y-4" method="post">
+    <div><label class="label">Usuário</label><input class="input" name="username" required></div>
+    <div><label class="label">Senha</label><input class="input" type="password" name="password" required></div>
+    <button class="btn w-full" type="submit">Entrar</button>
+  </form>
+  <div class="mt-6 text-sm text-zinc-400">Não tem conta? <a class="link" href="/register">Criar</a></div>
+</div>
+{% endblock %}
